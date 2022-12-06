@@ -1,5 +1,5 @@
 /*
-import React from "react";
+#1 import React from "react";
 
 const Team = (props) => {
   return (
@@ -57,20 +57,27 @@ function App(){
   );
 }
 export default App;
-*/
+
 import React, { Component } from 'react';
 
 class Team extends Component {
     render(){
       return(
-      <div>
-        <h2> Hello. I'm {this.props.name}. </h2>
-        <h2> Role: {this.props.role} .</h2>
-        <h2> I'm {this.props.age} Years.</h2>
-      </div>
-      );
-    }
-}
+        <div>
+          <About name={this.props.name} role={this.props.role} age={this.props.age}/>
+          /* <Social/> */
+        //<hr/>
+        //</div>
+      
+      // #2 <div>
+      //   <h2> Hello. I'm {this.props.name}. </h2>
+      //   <h2> Role: {this.props.role} .</h2>
+      //   <h2> I'm {this.props.age} Years.</h2>
+      // </div>
+     // );
+    //}
+//}
+/*
 class About extends Component{
   render(){
     return(
@@ -79,18 +86,23 @@ class About extends Component{
       <h2> Role: {this.props.role} .</h2>
       <h2> I'm {this.props.age} Years.</h2>
     </div>
-    )
-
+    );
   }
-
 }
+
+// const Social = () => {
+//   return(
+//     <div>
+//     <a>Facebook</a>
+//     <a>LinkedIn </a> 
+//     </div>
+//   );
+// }
 function App(){
   return(
     <div>
       <h1>Know our team:</h1>
-      <hr/>
       <Team name="Dayanna" role="Coding" age="27"/>
-      <hr/>
       <Team name="Janet" role="Marketing" age="30"/>
     </div>
 
