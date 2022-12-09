@@ -58,6 +58,8 @@ function App(){
 }
 export default App;
 
+//components 
+
 import React, { Component } from 'react';
 
 class Team extends Component {
@@ -110,3 +112,100 @@ function App(){
 }
 
 export default App;
+
+
+//STATES
+import React, { Component } from 'react';
+
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      name: 'Mateus',
+      contador: 0
+    };
+    this.aumentar = this.aumentar.bind(this);
+    this.diminuir = this.diminuir.bind(this);
+  }
+aumentar ()
+{
+  let state = this.state;
+  state.contador += 1;
+  this.setState(state);
+}
+diminuir ()
+{
+  let state = this.state;
+  if (state.contador === 0){
+    alert('This is the end!');
+    return;
+  }
+  state.contador -= 1;
+  this.setState(state);
+}
+  render() {
+      return(
+     <div> 
+        <h1>contador</h1>
+              {this.state.name} 
+            <h3>
+        <button onClick={this.diminuir}> - </button>
+           {this.state.contador}
+        <button onClick={this.aumentar}> + </button>
+        </h3>       
+      </div>
+    );
+  }
+}
+export default App;
+
+//ciclo de vida
+import React, { Component } from 'react';
+
+class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      time: '00:00:00'
+    };
+  }
+
+  componentDidMount(){
+    setInterval(()=>{
+      this.setState({ time : new Date().toLocaleTimeString ()})
+    }, 1000);
+  }
+
+  componentDidUpdate(){
+    console.log('Comment');
+  }
+//  shouldComponentUpdate(){true of false} > componentWillUpadate()
+  render () {
+    return(
+      <div>
+        <h1>My project {this.state.time}</h1>
+      </div>
+    );
+  }
+}
+export default App; 
+
+//Exercise Components
+
+import React, { Component } from 'react';
+import Membro from '/Users/don/Desktop/reactjs/system/myapp/src/Components/Membro';
+
+class App extends Component {
+  render(){
+    return(
+      <div>
+          <Membro name="Dayanna"/>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+*/
