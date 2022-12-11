@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+/* import React, { Component } from 'react';
 
 class Membro extends Component{
+    
    constructor(props){
     super(props);
     this.state = {
@@ -8,9 +9,9 @@ class Membro extends Component{
     };
     this.login = this.login.bind(this);
 }
-login()
+login(name)
 {
-    this.setState({name: 'Dayanna'})
+    this.setState({name: name})
 }
 signout()
 {
@@ -20,10 +21,10 @@ signout()
         return(
             <div>
                 <h2>Welcome {this.state.name}</h2>
-                <button onClick={this.login}>
-                    Login
+                <button onClick={() => this.login('Dayanna')}>
+                    Login as Dayanna
                 </button>
-                <button onClick={ () => this.setState({name: ''})}>
+                <button onClick={ () => this.setState({name: ''}) }>
                     Sign Out
                 </button>
             </div>
@@ -32,3 +33,4 @@ signout()
 }
 
 export default Membro;
+*/

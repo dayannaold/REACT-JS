@@ -200,7 +200,87 @@ class App extends Component {
   render(){
     return(
       <div>
-          <Membro name="Dayanna"/>
+          <Membro name="guest"/>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+//conditional render
+
+import react, { Component } from 'react';
+
+class App extends Component{
+
+    constructor(props){
+    super(props);
+    this.state = {
+      status: false
+    };
+    this.logout = this.logout.bind(this);
+    this.login = this.login.bind(this);
+  }
+  logout(){
+    this.setState({status: false});
+  }
+  login(){
+    this.setState({status: true});
+  }
+  render(){
+    return(
+      <div> 
+        {this.state.status ?
+        <div> 
+            <h2>Welcome to the System</h2>
+           <button onClick={this.logout}>Log out here</button> 
+        </div> :
+        <div>
+            <h2>Welcome Guest</h2> 
+            <button onClick={this.login}>Login here</button> 
+        </div>
+        }
+      </div>
+    );
+  }
+}
+
+export default App;
+
+//trabalhando com listas.
+
+// RETORNAR A ESSA AULA TRABALHANDO COM LISTAS
+
+error = item nao esta definido.
+Buscar solucao de importar minha pasta Components/Feed de maneira compactada
+
+import React, { Component } from 'react';
+import Feed from '/Users/don/Desktop/reactjs/system/myapp/src/Components/Feed/index.js'
+
+class App extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      feed:[
+        {id:1,username: 'Dayanna', likes:100, comments:212},
+        {id:2, username: 'Janet', likes: 120, comments: 24},
+        {id:3,username: 'Hellen', likes:30, comments:2},
+
+      ]
+
+    };
+  }
+  render(){
+    return(
+      <div>
+        {this.state.feed.map((item)=>{
+          return(
+          <Feed/>
+          );
+        })}
+
       </div>
     );
   }
